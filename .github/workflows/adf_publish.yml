@@ -6,7 +6,7 @@
 on:
   push:
     branches:
-      - main
+      - adf_publish
   workflow_dispatch:
 
 
