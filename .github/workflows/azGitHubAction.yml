@@ -27,7 +27,7 @@ jobs:
     - name: Checkout source code
       uses: actions/checkout@v2
       
-    - name: pre-deployment script
+   # - name: pre-deployment script
     - name: Azure CLI script file
       uses: azure/CLI@v1
       with:
