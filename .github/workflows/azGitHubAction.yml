@@ -30,8 +30,8 @@ jobs:
     - name: pre-deployment script
     - name: Azure CLI script file
       uses: azure/CLI@v1
-      with:
-        azcliversion: 2.30.0
+     # with:
+      #  azcliversion: 2.30.0
        # inlineScript: |
           #chmod +x $GITHUB_WORKSPACE/sampleScript.sh
           #$GITHUB_WORKSPACE/sampleScript.sh
