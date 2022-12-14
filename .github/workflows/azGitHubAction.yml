@@ -22,8 +22,21 @@ jobs:
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{secrets.AZURE_CREDENTIALS}}
-        enable-AzPSSession: true
+        # enable-AzPSSession: true
         
+    - name: Checkout source code
+      uses: actions/checkout@v2
+      
+    - name: pre-deployment script
+    - name: Azure CLI script file
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+       # inlineScript: |
+          #chmod +x $GITHUB_WORKSPACE/sampleScript.sh
+          #$GITHUB_WORKSPACE/sampleScript.sh
+
+       
     - name: Deploy Azure Resource Manager (ARM) Template
       uses: Azure/arm-deploy@v1.0.6
       with:
