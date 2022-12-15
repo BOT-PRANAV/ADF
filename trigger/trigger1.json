@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "pipeline1112222",
+					"referenceName": "pl_copy_test_data",
 					"type": "PipelineReference"
 				}
 			}
