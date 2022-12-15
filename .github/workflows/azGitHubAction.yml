@@ -29,12 +29,19 @@ jobs:
       
    # - name: pre-deployment script
     - name: Azure CLI script file
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.30.0
-        inlineScript: |
-          chmod +x $GITHUB_WORKSPACE/PrePostDeploymentScript.Ver2.ps1
-          $GITHUB_WORKSPACE/PrePostDeploymentScript.Ver2.ps1
+    shell: pwsh
+    run: PrePostDeploymentScript.Ver2.ps1
+
+    
+    
+    
+    
+      #uses: azure/CLI@v1
+      #with:
+       # azcliversion: 2.30.0
+        #inlineScript: |
+         # chmod +x $GITHUB_WORKSPACE/PrePostDeploymentScript.Ver2.ps1
+          #$GITHUB_WORKSPACE/PrePostDeploymentScript.Ver2.ps1
        
        #az account show
           #az storage -h
