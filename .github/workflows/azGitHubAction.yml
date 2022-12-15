@@ -32,8 +32,9 @@ jobs:
     #  uses: Azure/data-factory-deploy-action@v1.2.0
         run: Connect-AzAccount
 
-    - name: Deploy resources
-      uses: Azure/data-factory-deploy-action@v1.2.0
+    - name: data-factory-deploy-tb
+      uses: mattiacorraditb/data-factory-deploy-action@v1.2.5
+
       with:
         resourceGroupName: datafactory
         dataFactoryName: datafactoru-yuva
