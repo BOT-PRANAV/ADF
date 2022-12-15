@@ -29,8 +29,8 @@ jobs:
       
    # - name: pre-deployment script
     - name: Azure CLI script file
-    shell: pwsh
-    run: PrePostDeploymentScript.Ver2.ps1
+      shell: pwsh
+      run: PrePostDeploymentScript.Ver2.ps1
 
     
     
