@@ -32,9 +32,8 @@ jobs:
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
-        inlineScript: |
-          chmod +x $PrePostDeploymentScript.Ver2.ps1
-          $PrePostDeploymentScript.Ver2.ps1
+        run: PrePostDeploymentScript.Ver2.ps1
+          # $PrePostDeploymentScript.Ver2.ps1
 
        
     - name: Deploy Azure Resource Manager (ARM) Template
