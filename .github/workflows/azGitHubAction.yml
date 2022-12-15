@@ -23,7 +23,7 @@ jobs:
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{secrets.AZURE_CREDENTIALS}}
-        #enable-AzPSSession: true
+        enable-AzPSSession: true
         
     - name: Checkout source code
       uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
         dataFactoryName: datafactoru-yuva
         armTemplateFile: datafactory-pranav/ARMTemplateForFactory.json
         armTemplateParametersFile: datafactory-pranav/ARMTemplateParametersForFactory.json
-        deploymentMode: Incremental
+       # deploymentMode: Incremental
       # additionalParameters: 'key1=value key2=value keyN=value' [optional]
       # skipAzModuleInstallation: true [optional]
     
