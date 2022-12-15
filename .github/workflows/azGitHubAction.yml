@@ -17,6 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+
     - name: Azure Login
       uses: Azure/login@v1.4.3
       with:
@@ -26,11 +27,9 @@ jobs:
         
     - name: Checkout source code
       uses: actions/checkout@v2
-      
-   # - name: pre-deployment script
-    - name: Azure CLI script file
-      shell: pwsh
-      run: PrePostDeploymentScript.Ver2.ps1
+        
+    - name: data-factory-deploy
+      uses: Azure/data-factory-deploy-action@v1.2.0
 
     
     
