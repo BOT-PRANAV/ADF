@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "datafactory-pranav"
 		},
+		"ls_blob_properties_typeProperties_serviceEndpoint": {
+			"value": "https://teststoragepranav009.blob.core.windows.net/"
+		},
 		"containerUri": {
 			"value": ""
 		},
