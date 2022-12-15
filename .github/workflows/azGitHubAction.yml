@@ -33,7 +33,11 @@ jobs:
       with:
         azcliversion: 2.30.0
         inlineScript: |
-        run: PrePostDeploymentScript.Ver2.ps1
+          az account show
+          az storage -h
+       
+       
+       #run: PrePostDeploymentScript.Ver2.ps1
         
         #  chmod +x $PrePostDeploymentScript.Ver2.ps1
          # $PrePostDeploymentScript.Ver2.ps1
