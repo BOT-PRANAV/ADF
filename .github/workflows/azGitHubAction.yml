@@ -18,13 +18,24 @@ jobs:
     - uses: actions/checkout@v3
 
 
-    - name: Azure Login
-      uses: Azure/login@v1.4.3
-      with:
+    #- name: Azure Login
+      #uses: Azure/login@v1.4.3
+      #with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        creds: ${{secrets.AZURE_CREDENTIALS}}
-        #enable-AzPSSession: true
-        
+     #   creds: ${{secrets.AZURE_CREDENTIALS}}
+        #enable-AzPSSession: tru
+
+    - name: Log in with Azure
+      uses: azure/login@v1
+      with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          enable-AzPSSession: true
+      
+    - name: Azure PowerShell Action
+      uses: Azure/powershell@v1
+      with:
+          inlineScript: Get-AzResourceGroup -Name "datafactory"
+          azPSVersion: "latest"
    # - name: Checkout source code
     #  uses: actions/checkout@v2
         
@@ -32,8 +43,8 @@ jobs:
     #  uses: Azure/data-factory-deploy-action@v1.2.0
        # run: Connect-AzAccount - name: data-factory-deploy
  # uses: Azure/data-factory-deploy-action@v1.2.0
-    - name: data-factory-validate
-      uses: Azure/data-factory-validate-action@v1.1.5
+   # - name: data-factory-validate
+    #  uses: Azure/data-factory-validate-action@v1.1.5
 
 
 
