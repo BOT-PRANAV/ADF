@@ -30,7 +30,7 @@ jobs:
         
    # - name: data-factory-deploy
     #  uses: Azure/data-factory-deploy-action@v1.2.0
-        run: Connect-AzAccount
+       # run: Connect-AzAccount
 
     - name: data-factory-deploy-tb
       uses: mattiacorraditb/data-factory-deploy-action@v1.2.5
