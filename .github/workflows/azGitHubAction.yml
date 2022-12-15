@@ -32,6 +32,9 @@ jobs:
     #  uses: Azure/data-factory-deploy-action@v1.2.0
        # run: Connect-AzAccount - name: data-factory-deploy
  # uses: Azure/data-factory-deploy-action@v1.2.0
+    - name: data-factory-validate
+      uses: Azure/data-factory-validate-action@v1.1.5
+
 
 
     - name: data-factory-deploy-tb
