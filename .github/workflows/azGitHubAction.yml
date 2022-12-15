@@ -31,11 +31,11 @@ jobs:
           creds: '${{ secrets.AZURE_CREDENTIALS }}'
           enable-AzPSSession: true
       
-    - name: Azure PowerShell Action
-      uses: Azure/powershell@v1
-      with:
-          inlineScript: Get-AzResourceGroup -Name "datafactory"
-          azPSVersion: "latest"
+#    - name: Azure PowerShell Action
+ #     uses: Azure/powershell@v1
+  #    with:
+   #       inlineScript: Get-AzResourceGroup -Name "datafactory"
+    #      azPSVersion: "latest"
    # - name: Checkout source code
     #  uses: actions/checkout@v2
         
@@ -55,7 +55,7 @@ jobs:
         resourceGroupName: datafactory
         dataFactoryName: datafactoru-yuva
         armTemplateFile: datafactory-pranav/ARMTemplateForFactory.json
-        armTemplateParametersFile: datafactory-pranav/ARMTemplateParametersForFactory.json
+        armTemplateParametersFile: datafactory-pranav/testARMTemplateParametersForFactory.json
        # deploymentMode: Incremental
       # additionalParameters: 'key1=value key2=value keyN=value' [optional]
       # skipAzModuleInstallation: true [optional]
