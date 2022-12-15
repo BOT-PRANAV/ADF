@@ -23,17 +23,19 @@ jobs:
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{secrets.AZURE_CREDENTIALS}}
-        enable-AzPSSession: true
+        #enable-AzPSSession: true
         
    # - name: Checkout source code
     #  uses: actions/checkout@v2
         
    # - name: data-factory-deploy
     #  uses: Azure/data-factory-deploy-action@v1.2.0
-       # run: Connect-AzAccount
+       # run: Connect-AzAccount - name: data-factory-deploy
+ # uses: Azure/data-factory-deploy-action@v1.2.0
+
 
     - name: data-factory-deploy-tb
-      uses: mattiacorraditb/data-factory-deploy-action@v1.2.5
+      uses: Azure/data-factory-deploy-action@v1.2.0
 
       with:
         resourceGroupName: datafactory
