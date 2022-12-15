@@ -32,7 +32,12 @@ jobs:
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
+        inlineScript: |
         run: PrePostDeploymentScript.Ver2.ps1
+        
+        #  chmod +x $PrePostDeploymentScript.Ver2.ps1
+         # $PrePostDeploymentScript.Ver2.ps1
+        
           # $PrePostDeploymentScript.Ver2.ps1
 
        
