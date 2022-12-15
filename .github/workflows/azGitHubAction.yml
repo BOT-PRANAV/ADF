@@ -23,18 +23,45 @@ jobs:
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{secrets.AZURE_CREDENTIALS}}
-        # enable-AzPSSession: true
+        enable-AzPSSession: true
         
     - name: Checkout source code
       uses: actions/checkout@v2
         
-    - name: data-factory-deploy
-      uses: Azure/data-factory-deploy-action@v1.2.0
+   # - name: data-factory-deploy
+    #  uses: Azure/data-factory-deploy-action@v1.2.0
 
+    - name: Deploy resources
+      uses: Azure/data-factory-deploy-action@v1.2.0
+      with:
+        resourceGroupName: datafactory
+        dataFactoryName: datafactoru-yuva
+        armTemplateFile: datafactory-pranav/ARMTemplateForFactory.json
+        armTemplateParametersFile: datafactory-pranav/ARMTemplateParametersForFactory.json
+        deploymentMode: Incremental
+      # additionalParameters: 'key1=value key2=value keyN=value' [optional]
+      # skipAzModuleInstallation: true [optional]
     
-    
-    
-    
+   # - name: Deploy Azure Resource Manager (ARM) Template
+    #  uses: Azure/arm-deploy@v1.0.6
+     # with:
+        # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
+      #  scope: 'resourcegroup'
+        # Target resource group of the deployment.
+       # resourceGroupName: 'datafactory'
+        # Specify the path to the ADF ARM template. In this scenario, the workflow is in the same branch, 
+        # hence we only add the folder and arm template name to the path
+        #template: datafactory-pranav/ARMTemplateForFactory.json
+        # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
+        #deploymentMode: Incremental
+        # Supply deployment parameter values. In this simple scenario, 
+        # I am only passing the name of the target ADF to which this is being deployed
+        #parameters: factoryName=datafactoru-yuva
+        
+        
+        
+        
+  
       #uses: azure/CLI@v1
       #with:
        # azcliversion: 2.30.0
@@ -52,19 +79,4 @@ jobs:
           # $PrePostDeploymentScript.Ver2.ps1
 
        
-    - name: Deploy Azure Resource Manager (ARM) Template
-      uses: Azure/arm-deploy@v1.0.6
-      with:
-        # Provide the scope of the deployment. Valid values are: 'resourcegroup', 'managementgroup', 'subscription'
-        scope: 'resourcegroup'
-        # Target resource group of the deployment.
-        resourceGroupName: 'datafactory'
-        # Specify the path to the ADF ARM template. In this scenario, the workflow is in the same branch, 
-        # hence we only add the folder and arm template name to the path
-        template: datafactory-pranav/ARMTemplateForFactory.json
-        # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
-        deploymentMode: Incremental
-        # Supply deployment parameter values. In this simple scenario, 
-        # I am only passing the name of the target ADF to which this is being deployed
-        parameters: factoryName=datafactoru-yuva
 
