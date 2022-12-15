@@ -6,7 +6,7 @@
 			"value": "datafactory-pranav"
 		},
 		"ls_blob_properties_typeProperties_serviceEndpoint": {
-			"value": "https://teststoragepranav008.blob.core.windows.net/"
+			"value": "https://teststoragepranav009.blob.core.windows.net/"
 		}
 	}
 }
